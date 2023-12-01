@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        username <input type="text" placeholder="name" id="user"> 
+        <p id="error1"></p>
+
+        password <input type="password" placeholder="password" id="pass">
+        <p id="error2"></p>
+
+        <input type="checkbox" onclick="show()"> show password <br> <br>
+
+       <input type="submit" value="submit" onclick="return validate()">
+
+    </form>
+</body>
+
+<script>
+
+function validate(){
+    const username =  document.getElementById("user").value
+    const password =  document.getElementById("pass").value
+
+    
+     if(username.length>10 || username.length<10){
+        document.getElementById("error1").innerHTML="white space are not allowed"
+    return false
+    }
+
+}
+
+function show(){
+    const password =  document.getElementById("pass")
+    if(password.type=="password"){
+        password.type="text"
+    }else{
+        password.type="password"
+    }
+    
+   }
+
+
+
+</script>
+</html>
